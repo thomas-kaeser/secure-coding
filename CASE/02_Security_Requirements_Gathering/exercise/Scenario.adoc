@@ -18,7 +18,7 @@
 
 == Scenario: Online Consultation
 
-ACME Medical center is a group practice of around twenty general practioners working together. They want to expand their services by providing an online access for their clients.
+ACME Medical center is a group practice of around twenty general practioners working together. They want to expand their services by providing an online access for their patients.
 
 === The customer says:
 
@@ -29,7 +29,7 @@ We would like to create an online platform for our patients. They can contact ou
 ....
 @startuml
 actor "Patient" as patient
-frame "Online Practice" {
+frame "Online Consultation" {
     actor "Doctor" as doctor
     actor "Pharmacist" as pharmacist
     component "Drug management" as dm
