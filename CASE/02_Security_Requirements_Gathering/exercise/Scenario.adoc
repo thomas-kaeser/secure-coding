@@ -1,0 +1,48 @@
+= Security Requirements Gathering
+
+== Understand security requirements engineering
+
+=== Exercise 1: Use Case, Abuse Case, Security Use Case
+
+1. Read the scenario
+2. Identify some actors and use cases and draw a use case diagram
+3. Change perspective and think as malicious user how this system could be misused
+4. Add an abuse case to the diagram that threatens a use case
+5. Find a solution how to prevent an abuse case and create a security use case
+
+=== Exercise 2: Abuser Story, Security Story
+
+1. Try to formulate one user story for the systen
+2. Find and write a related abuser story
+3. Create a security story that prevents the abuser story
+
+== Scenario: Online Consultation
+
+ACME Medical center is a group practice of around twenty general practioners working together. They want to expand their services by providing an online access for their clients.
+
+=== The customer says:
+
+We would like to create an online platform for our patients. They can contact our doctors directly online and ask for medical advice 24/7. There is always a doctor on duty who can reply to urgent requests and emergencies. Doctors reply to the patients by using a patient management system. Patient data must be stored in secure way and only be readable by the doctor treating the patient. Billing information must be transfered to the patients health insurance for further processing. If a patient needs medication to treat his or her health problems, the doctor can directly order it from our own pharmacy. The pharmacist can manage the stock of the medication in the drug management system. The inventory changes of painkillers must always be auditable for regulatory reasons.
+
+=== Context overview
+[plantuml]
+....
+@startuml
+actor "Patient" as patient
+frame "Online Practice" {
+    actor "Doctor" as doctor
+    actor "Pharmacist" as pharmacist
+    component "Drug management" as dm
+    component "Patient portal" as portal
+    component "Patient management" as pm
+}
+patient -> portal
+portal <-> pm
+pm <-> dm
+doctor --> pm
+pharmacist --> dm
+actor "Insurance" as ins
+pm --> ins
+@enduml
+....
+
