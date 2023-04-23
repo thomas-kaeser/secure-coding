@@ -1,0 +1,20 @@
+= Threat Modelling
+
+== Create a threat model with Threat Dragon
+
+=== Exercise 1: What are we working on?
+
+. Create a high level diagram for the architecture by outlining some technical components (database, server, etc.) and key elements for security (authentication, authorization, etc.)
+. Identify external dependencies, entry points, assets and trust levels
+. Create a Data Flow Diagram (DFD) based on the previously gained information
+
+
+=== Exercise 2: What can go wrong?
+
+. Identify threats by using STRIDE model
+. Use DREAD model to rate threats
+
+=== Exercice 3: What are we doing about it?
+. Identify some countermeasures and controls for identified threats
+
+
